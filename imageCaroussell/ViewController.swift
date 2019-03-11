@@ -55,6 +55,7 @@ class ViewController: NSViewController {
         btnChoose2.isEnabled = false
         btnStop.isEnabled = true
         
+        changeSource()
         timer = Timer.scheduledTimer(
             timeInterval: 5,
             target: self,
@@ -62,7 +63,6 @@ class ViewController: NSViewController {
             userInfo: nil,
             repeats: true
         )
-        changeSource()
     }
     
     @IBAction func btnStopClicked(_ sender: Any) {
