@@ -54,6 +54,7 @@ class ViewController: NSViewController {
         btnChoose1.isEnabled = false
         btnChoose2.isEnabled = false
         btnStop.isEnabled = true
+        
         timer = Timer.scheduledTimer(
             timeInterval: 5,
             target: self,
@@ -95,6 +96,10 @@ class ViewController: NSViewController {
                 imageView.image = image
                 imageLoaded = 2
             }
+            else{
+                stackModal(headline: "Fehler", content: "Bild Nr.1 konnte nicht geladen werden.")
+                btnStopClicked(self)
+            }
             
         }
         else{
@@ -102,7 +107,10 @@ class ViewController: NSViewController {
                 imageView.image = image
                 imageLoaded = 1
             }
+            else{
+                stackModal(headline: "Fehler", content: "Bild Nr.2 konnte nicht geladen werden.")
+                btnStopClicked(self)
+            }
         }
     }
 }
-
